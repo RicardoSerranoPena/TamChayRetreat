@@ -107,7 +107,7 @@
           echo "your confirmation number is: " . $_SESSION["group_reservation_id"] . "<br>";
           echo "for your event " . $_SESSION["event_name"] . "<br>";
           echo "from " . $_SESSION["event_start"] . " to " . $_SESSION["event_end"] . "<br>";
-          echo "which includes a stay for " . $_SESSION["event_guests"] . " guests" . "<br>";
+          echo "which include a stay for " . $_SESSION["event_guests"] . " guests" . "<br>";
           ?>
         </div>
       </div>

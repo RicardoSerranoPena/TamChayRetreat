@@ -1,12 +1,7 @@
 body {
   background: #fff;
-  font-family: "montserrat", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #6c757d;
-  position: relative; }
+  font-family: "Roboto", sans-serif;
+  }
 
 ::-moz-selection {
   color: #fff;
@@ -27,15 +22,16 @@ a {
 
 h1, h2, h3, h4, h5 {
   color: #81b673;
-  font-family: "league-gothic", sans-serif;
+  font-family: 'Crimson Pro', serif;
   font-weight: 400;
-  font-style: normal;}
+  font-style: normal;
+  }
 
 .font-family-serif {
   font-family: "Playfair Display", times, serif; }
 
 .font-family-sans-serif {
-  font-family: "montserrat", sans-serif; }
+  font-family: "Roboto", sans-serif; }
 
 .bg-light {
   background: #f2f4fb !important; }
@@ -135,19 +131,19 @@ textarea.form-control {
   .site-logo a {
     font-size: 30px;
     color: #fff;
-    font-weight: 400;
+    font-weight: 300;
     height:100px;
     line-height: 1;
-    font-family: "league-gothic", sans-serif;
+    font-family: noto-serif, serif;
     }
   .site-logo b {
     font-size: 30px;
     color: #28a745;
-    font-weight: 400;
+    font-weight: 300;
     opacity: 0;
     height:100px;
     line-height: 1;
-    font-family: "league-gothic", sans-serif;
+    font-family: noto-serif, serif;
     }
     @media (max-width: 991.98px) {
       .site-logo a {
@@ -169,12 +165,16 @@ textarea.form-control {
   .site-navbar nav {
     text-align: left; }
     .site-navbar nav .menu {
-      font-family: "league-gothic", sans-serif; }
+      font-family: Roboto, serif;
+      text-align: left;
+      }
       .site-navbar nav .menu li a {
         color: #81b673;
-        font-size: 40px;
+        font-size: 35px;
         padding: 5px 10px;
-        position: relative; }
+        position: relative;
+        text-align: left;
+        }
         .site-navbar nav .menu li a:hover:before {
           width: 100%; }
       .site-navbar nav .menu li.active a {
@@ -186,7 +186,7 @@ textarea.form-control {
   .site-navbar .extra-info ul li a {
     color: #000; }
   .site-navbar .extra-info h3 {
-    font-family: "montserrat", sans-serif;
+    font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: .2em;
@@ -206,8 +206,8 @@ textarea.form-control {
   width: 100%;
   position: relative; }
   .site-hero .heading {
-    font-family: "league-gothic", sans-serif;
-    font-weight: 400; }
+    font-family: noto-serif, serif;
+    font-weight: 300; }
   .site-hero .scroll-down {
     position: absolute;
     bottom: 20px;
@@ -238,7 +238,7 @@ textarea.form-control {
   min-height: 700px; }
   .site-hero-inner .heading {
     font-size: 80px;
-    font-family: "league-gothic", times, sans-serif;
+    font-family: "Crimson Pro", times, sans-serif;
     color: #81b673;
     line-height: 1;
     font-weight: bold; }
@@ -269,6 +269,17 @@ textarea.form-control {
 .menu-open .site-menu-toggle span {
   background: #000; }
 
+.site-language-toggle {
+  top: auto;
+  float: right;
+  width: 40px;
+  height: 45px;
+  position: relative;
+  margin: 0px auto;
+  z-index: 200;
+  margin-right: 55px;
+}
+
 .site-menu-toggle {
   top: 0;
   float: right;
@@ -287,7 +298,8 @@ textarea.form-control {
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
-  margin-right: 40px; }
+  margin-right: 25px;
+  }
   .site-menu-toggle span {
     display: block;
     position: absolute;
@@ -343,7 +355,7 @@ textarea.form-control {
 .visit-section .heading {
   font-size: 15px;
   text-transform: uppercase;
-  font-family: "montserrat", sans-serif;
+  font-family: "Crimson Pro", sans-serif;
   color: #b3b3b3;
   letter-spacing: .2em;
   margin-bottom: 30px; }
@@ -372,7 +384,7 @@ textarea.form-control {
 
 .heading-serif, .heading, .testimonial-section .heading, .slider-section .heading, .blog-post-entry .heading {
   font-size: 60px;
-  font-family: "league-gothic", sans-serif;
+  font-family: noto-serif, serif;
   font-weight: 700; }
   @media (max-width: 991.98px) {
     .heading-serif, .heading, .testimonial-section .heading, .slider-section .heading, .blog-post-entry .heading {
@@ -706,7 +718,7 @@ textarea.form-control {
   .side-box .heading, .sidebar-search .heading {
     font-size: 18px;
     margin-bottom: 30px;
-    font-family: "league-gothic", sans-serif; }
+    font-family: noto-serif, serif; }
 
 .post-list li {
   margin-bottom: 20px; }
@@ -742,14 +754,14 @@ textarea.form-control {
     border-color: #343a40; }
 
 .contact-section .contact-info p {
-  font-family: "montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 30px;
   margin-bottom: 30px; }
   .contact-section .contact-info p .d-block {
     font-size: 14px;
     letter-spacing: .2em;
     font-weight: bold;
-    font-family: "montserrat", sans-serif;
+    font-family: "Roboto", sans-serif;
     text-transform: uppercase; }
 
 .post-categories li {
