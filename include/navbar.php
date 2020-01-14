@@ -1,4 +1,7 @@
-<?php  ?>
+<?php
+
+
+?>
 
 <div class="container-fluid">
   <div class="row align-items-center">
@@ -12,14 +15,17 @@
       </div>
 
       <div class="site-language-toggle" data-aos="fade">
-        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="fa fa-globe"></span>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="index.php?lang=en">English</a>
-            <a class="dropdown-item" onclick="<?php $this->lang = "vi"; ?>">Tiếng Việt</a>
-          </div>
-        </button>
+        <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="fa fa-language"></span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="index.php?page=home&lang=en">English</a>
+          <a class="dropdown-item" href="index.php?page=home&lang=vi">Tiếng Việt</a>
+        </div>
       </div>
+
+
+
       <!-- END menu-toggle -->
 
       <div class="site-navbar js-site-navbar">

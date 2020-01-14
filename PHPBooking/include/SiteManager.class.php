@@ -7,7 +7,7 @@
 ?><?php
 class SiteManager
 {
-	public $lang="vi";
+	public $lang="en";
 
 	public $page="home";
 	public $data_file = "data/rooms.xml";

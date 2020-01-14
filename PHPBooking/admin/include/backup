@@ -1,0 +1,42 @@
+confirm
+
+
+if(mail
+(
+  $booking->email,
+  stripslashes($_POST["subject"]),
+  stripslashes($_POST["message"]),
+  $headers
+))
+{
+  ?>
+  <h3><?php echo $this->texts["message_sent_success"];?></h3>
+
+  <?php
+}
+
+
+
+confirm booking_file
+
+
+if(mail
+(
+  $booking->email,
+  stripslashes($_POST["subject"]),
+  stripslashes($_POST["message"]),
+  $headers
+))
+{
+  ?>
+  <h3><?php echo $this->texts["message_sent_success"];?></h3>
+
+  <?php
+}
+else
+{
+  ?>
+  <h3 class="red-font"><?php echo $this->texts["error_while_sending"];?></h3>
+
+  <?php
+}

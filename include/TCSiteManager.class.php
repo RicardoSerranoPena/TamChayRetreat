@@ -2,10 +2,10 @@
 
 class TCSiteManager {
 
-  public $lang="vi";
+  public $lang;
 
   public $page="home";
-  public $domain = "www.tamchayretreat.com";
+  public $domain = "tamchayretreat.com";
   public $texts = array();
   public $multi_language = true;
 
@@ -58,8 +58,10 @@ class TCSiteManager {
 
   }
 
-  function loadSettings()
+  function changeLanguage()
   {
+    $this->texts=array();
+
     if(file_exists("languages/texts_".$this->lang.".php"))
     {
       $this->texts = parse_ini_file("languages/texts_".$this->lang.".php",true);
@@ -75,14 +77,20 @@ class TCSiteManager {
     }
   }
 
-  function changeLanguage()
+  function loadSettings()
   {
-    if ($this->lang=="en") {
-      $this->SetLanguage("vi");
-    } elseif ($this->lang=="vi") {
-      $this->SetLanguage("en");
-    } else {
-      echo "language not supported";
+    if(file_exists("languages/texts_".$this->lang.".php"))
+    {
+      $this->texts = parse_ini_file("languages/texts_".$this->lang.".php",true);
+    }
+    else
+    if(file_exists("../languages/texts_".$this->lang.".php"))
+    {
+      $this->texts = parse_ini_file("../languages/texts_".$this->lang.".php",true);
+    }
+    else
+    {
+      die("The language file include/texts_".$this->lang.".php doesn't exist!");
     }
   }
 
@@ -101,7 +109,7 @@ class TCSiteManager {
 
       $HTML = ob_get_contents();
 
-      $this->TemplateHTML=str_replace("<site top_header/>", $HTML,$this->TemplateHTML);
+      $this->TemplateHTML=str_replace("<site top_header/>", $HTML, $this->TemplateHTML);
 
       ob_end_clean();
 
@@ -114,7 +122,22 @@ class TCSiteManager {
       }
 
       $HTML = ob_get_contents();
+
       $this->TemplateHTML=str_replace("<site navbar/>", $HTML, $this->TemplateHTML);
+
+      ob_end_clean();
+
+      ob_start();
+      $HTML="";
+
+      if(file_exists("include/footer.php"))
+      {
+        include("include/footer.php");
+      }
+
+      $HTML = ob_get_contents();
+
+      $this->TemplateHTML=str_replace("<site footer/>", $HTML, $this->TemplateHTML);
 
       ob_end_clean();
 

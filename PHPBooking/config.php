@@ -9,12 +9,11 @@ seo_urls = "0"
 currency = "₫"
 date_format = "d/m/Y"
 results_per_page = "10"
-admin_email = "tamchayretreat@gmail.com"
+admin_email = "reservations@tamchayretreat.com"
 use_captcha_images = "1"
 
 [email]
-smtp_server = "localhost"
-smtp_user = ""
-smtp_password = ""
-smtp_port = "25"
-
+smtp_server = "kusamailer.tenten.cloud"
+smtp_user = "reservations@tamchayretreat.com"
+smtp_password = "Dj6R1#F5BNNM"
+smtp_port = "587"

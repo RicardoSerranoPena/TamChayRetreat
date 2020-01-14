@@ -6,7 +6,8 @@
       <div class="row check-availabilty" id="next">
         <div class="block-32" data-aos="fade-up" data-aos-offset="-200">
 
-          <form action="booking.html" method="post">
+          <form action="index.php?page=booking">
+            <input type="hidden" name="page" value="booking"/>
             <div class="row">
               <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
                 <label for="checkin_date" class="font-weight-bold text-black"><?php echo $this->texts["check_in_date"]; ?></label>
@@ -32,7 +33,7 @@
                         <option value="">1</option>
                         <option value="">2</option>
                         <option value="">3</option>
-                        <option value="">4+</option>
+                        <option value="">4</option>
                       </select>
                     </div>
                   </div>
@@ -87,6 +88,7 @@
             </div>
           </a>
         </div>
+        <p><?php echo $this->texts["disclaimer"]; ?></p>
 
       </div>
     </div>
@@ -102,32 +104,33 @@
         </div>
       </div>
       <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="100">
-        <a href="#" class="image d-block bg-image-3" style="background-image: url('images/img_3.jpg');"></a>
+        <a href="index.php?page=booking" class="image d-block bg-image-3" style="background-image: url('images/img_3.jpg');"></a>
         <div class="text">
           <span class="d-block mb-4"><span class="display-4 text-primary"><?php echo $this->texts["s_b_price"]; ?></span> <span class="text-uppercase letter-spacing-2"><?php echo $this->texts["per_night"]; ?></span> </span>
           <h2 class="mb-4"><?php echo $this->texts["standard_bed"]; ?></h2>
           <p><?php echo $this->texts["standard_bed_description"]; ?></p>
-          <p><a href="#" class="btn btn-primary text-white"><?php echo $this->texts["book_now"]; ?></a></p>
+          <p><a href="index.php?page=booking" class="btn btn-primary text-white"><?php echo $this->texts["book_now"]; ?></a></p>
         </div>
       </div>
       <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="200">
-        <a href="#" class="image d-block bg-image-2 order-2" style="background-image: url('images/img_2.jpg');"></a>
+        <a href="index.php?page=booking" class="image d-block bg-image-2 order-2" style="background-image: url('images/img_2.jpg');"></a>
         <div class="text order-1">
           <span class="d-block mb-4"><span class="display-4 text-primary"><?php echo $this->texts["d_r_price"]; ?></span> <span class="text-uppercase letter-spacing-2"><?php echo $this->texts["per_night"]; ?></span> </span>
           <h2 class="mb-4"><?php echo $this->texts["double_room"]; ?></h2>
           <p><?php echo $this->texts["double_room_description"]; ?></p>
-          <p><a href="#" class="btn btn-primary text-white"><?php echo $this->texts["book_now"]; ?></a></p>
+          <p><a href="index.php?page=booking" class="btn btn-primary text-white"><?php echo $this->texts["book_now"]; ?></a></p>
         </div>
       </div>
       <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="100">
-        <a href="#" class="image d-block bg-image-2" style="background-image: url('images/img_1.jpg');"></a>
+        <a href="index.php?page=booking" class="image d-block bg-image-2" style="background-image: url('images/img_1.jpg');"></a>
         <div class="text">
           <span class="d-block mb-4"><span class="display-4 text-primary"><?php echo $this->texts["s_r_price"]; ?></span> <span class="text-uppercase letter-spacing-2"><?php echo $this->texts["per_night"]; ?></span> </span>
           <h2 class="mb-4"><?php echo $this->texts["single_room"]; ?></h2>
           <p><?php echo $this->texts["single_room_description"]; ?></p>
-          <p><a href="#" class="btn btn-primary text-white"><?php echo $this->texts["book_now"]; ?></a></p>
+          <p><a href="index.php?page=booking" class="btn btn-primary text-white"><?php echo $this->texts["book_now"]; ?></a></p>
         </div>
       </div>
+      <p><?php echo $this->texts["disclaimer"]; ?></p>
 
     </div>
   </section>

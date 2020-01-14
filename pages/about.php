@@ -163,6 +163,7 @@
               </div>
             </div>
             <!-- END slider -->
+            <p><?php echo $this->texts["disclaimer"]; ?></p>
           </div>
 
         </div>

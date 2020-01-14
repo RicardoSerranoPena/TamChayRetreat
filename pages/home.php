@@ -2,13 +2,42 @@
 
  ?>
 
+ <script>
+ function ValidateForm(form)
+ {
+ 	if(form.start_time.value=="")
+ 	{
+ 		alert("<?php echo $this->texts["check_in_date"];?>");
+ 		return false;
+ 	}
+
+ 	if(form.end_time.value=="")
+ 	{
+ 		alert("<?php echo $this->texts["check_out_date"];?>");
+ 		return false;
+ 	}
+
+ 	var start_time = Date.parse(form.start_time.value);
+ 	var end_time = Date.parse(form.end_time.value);
+
+ 	if(start_time>end_time)
+ 	{
+ 		alert("<?php echo $this->texts["check_in_validation"];?>");
+ 		return false;
+ 	}
+
+ 	return true;
+ }
+ </script>
+
   <section class="section bg-light pb-0"  >
     <div class="container">
 
       <div class="row check-availabilty" id="next">
         <div class="block-32" data-aos="fade-up" data-aos-offset="-200">
 
-          <form action="booking.html" method="post">
+          <form action="index.php?page=booking" onsubmit="return ValidateForm(this)">
+            <input type="hidden" name="page" value="booking"/>
             <div class="row">
               <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
                 <label for="checkin_date" class="font-weight-bold text-black"><?php echo $this->texts["check_in_date"]?></label>
@@ -34,7 +63,7 @@
                         <option value="">1</option>
                         <option value="">2</option>
                         <option value="">3</option>
-                        <option value="">4+</option>
+                        <option value="">4</option>
                       </select>
                     </div>
                   </div>
@@ -81,7 +110,7 @@
         <div class="row">
 
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <a href="#" class="room">
+            <a href="index.php?page=rooms" class="room">
               <figure class="img-wrap">
                 <img src="images/img_3.jpg" alt="Free website template" class="img-fluid mb-3">
               </figure>
@@ -92,7 +121,7 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <a href="#" class="room">
+            <a href="index.php?page=rooms" class="room">
               <figure class="img-wrap">
                 <img src="images/img_2.jpg" alt="Free website template" class="img-fluid mb-3">
               </figure>
@@ -103,7 +132,7 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <a href="rooms.html" class="room">
+            <a href="index.php?page=rooms" class="room">
               <figure class="img-wrap">
                 <img src="images/img_1.jpg" alt="Free website template" class="img-fluid mb-3">
               </figure>
@@ -113,6 +142,7 @@
               </div>
             </a>
           </div>
+          <p><?php echo $this->texts["disclaimer"]; ?></p>
 
         </div>
       </div>

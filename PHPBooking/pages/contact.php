@@ -5,12 +5,23 @@
 // Find out more about our products and services on:
 // http://www.netartmedia.net
 // Released under the MIT license
+
+
+namespace BookingProjectTC;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+require 'admin/include/PHPMailer.php';
+require 'admin/include/SMTP.php';
+require 'admin/include/Exception.php';
+$mail = new PHPMailer;
+
 ?><?php
 if(!defined('IN_SCRIPT')) die("");
 $process_error="";
 
 if(isset($_POST["SubmitContact"]))
-{	
+{
 
 	if($this->settings["website"]["use_captcha_images"]==1 && ( (md5($_POST['code']) != $_SESSION['code'])|| trim($_POST['code']) == "" ) )
 	{
@@ -25,34 +36,46 @@ if(isset($_POST["SubmitContact"]))
 			$_POST["message"]=strip_tags(stripslashes($_POST["message"]));
 			$_POST["email"]=strip_tags(stripslashes($_POST["email"]));
 			$_POST["phone"]=strip_tags(stripslashes($_POST["phone"]));
-			
+
 			$headers  = "From: \"".strip_tags(stripslashes($_POST["name"]))."\"<".strip_tags(stripslashes($_POST["email"])).">\n";
 			$headers .= "MIME-Version: 1.0\r\n";
 			$headers .= "Date: ".date("r")."\r\n";
 			$headers .= "Message-ID: <".time()."@contact>\r\n";
 			$headers = "Content-Type: text/plain; charset=utf-8\r\n";
-				
+
 			$email_text = $this->texts["sent_by"].": ".strip_tags(stripslashes($_POST["name"])).
 			", ".$this->texts["email"].": ".strip_tags(stripslashes($_POST["email"]));
 			if($_POST["phone"]!="")
 			{
 				$email_text .= ", ".$this->texts["phone"].": ".strip_tags(stripslashes($_POST["phone"]));
 			}
-			
+
 			$email_text .= "\n\n".stripslashes($_POST["message"]);
 
-		
-				mail
-				(
-					$this->settings["website"]["admin_email"],
-					strip_tags(stripslashes($_POST["subject"])),
-					$email_text, 
-					$headers
-				);
-				?>
-				<br/><br/><h3><?php echo $this->texts["message_sent_success"];?></h3>
-				<?php
-			
+
+      //PHPMailer starts here
+      $mail->isSMTP();
+      $mail->Host = $this->settings["email"]["smtp_server"];
+      $mail->Port = 587;
+      $mail->SMTPAuth = true;
+      $mail->Username = $this->settings["email"]["smtp_user"];
+      $mail->Password = $this->settings["email"]["smtp_password"];
+      $mail->setFrom($this->settings["website"]["admin_email"], 'Tamchay retreat booking');
+      $mail->addAddress($this->settings["email"]["smtp_user"], 'Tamchay Booking');
+      $mail->Subject = stripslashes($_POST["subject"]);
+      $mail->Body = $email_text;
+
+      if (!$mail->send())
+      {
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+      } else
+      {
+        echo 'Message sent!';
+      }
+      //PHPMailer ends here
+
+
+
 		}
 	}
 
@@ -71,7 +94,7 @@ if($process_error!="")
 <form id="main" action="index.php" method="post" >
 <input type="hidden" name="page" value="contact"/>
 
-	
+
 	<input type="hidden" name="SubmitContact" value="1"/>
 	<fieldset>
 		<legend><?php echo $this->texts["message_or_questions"];?></legend>
@@ -79,15 +102,15 @@ if($process_error!="")
 			<li>
 				<label for="subject"><?php echo $this->texts["subject"];?>(*)
 				<br>
-				
+
 				</label>
 				<input id="subject" <?php if(isset($_REQUEST["subject"])) echo "value=\"".$_REQUEST["subject"]."\"";?> name="subject" placeholder="" type="text" required/>
-			
+
 			</li>
 			<li>
 				<label for="description"><?php echo $this->texts["message"];?>(*)
 				<br>
-				
+
 				</label>
 				<textarea id="message" name="message" rows="8" required><?php if(isset($_REQUEST["message"])) echo stripslashes($_REQUEST["message"]);?></textarea>
 			</li>
@@ -96,7 +119,7 @@ if($process_error!="")
 	<fieldset>
 		<legend><?php echo $this->texts["your_details"];?></legend>
 		<ol>
-			
+
 			<li>
 				<label for="name"><?php echo $this->texts["name"];?>(*)</label>
 				<input id="name" <?php if(isset($_REQUEST["name"])) echo "value=\"".$_REQUEST["name"]."\"";?> name="name" placeholder="" type="text" required/>
@@ -104,7 +127,7 @@ if($process_error!="")
 			<li>
 				<label for="email"><?php echo $this->texts["email"];?>(*)</label>
 				<input id="email" <?php if(isset($_REQUEST["email"])) echo "value=\"".$_REQUEST["email"]."\"";?> name="email" placeholder="example@domain.com" type="email" required/>
-				
+
 			</li>
 			<li>
 				<label for="phone"><?php echo $this->texts["phone"];?></label>

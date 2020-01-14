@@ -5,6 +5,17 @@
 // Find out more about our products and services on:
 // http://www.netartmedia.net
 // Released under the MIT license
+
+
+namespace BookingProject;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+require 'include/PHPMailer.php';
+require 'include/SMTP.php';
+require 'include/Exception.php';
+$mail = new PHPMailer;
+
 ?><?php
 if(!defined('IN_SCRIPT')) die("");
 
@@ -14,7 +25,7 @@ $booking=array();
 $xml = simplexml_load_file($this->booking_file);
 foreach($xml->children() as $child)
 {
-	if($child->code==$code) 
+	if($child->code==$code)
 	{
 		$booking=$child;
 		break;
@@ -24,7 +35,7 @@ foreach($xml->children() as $child)
 if(isset($_POST["proceed_confirm"]))
 {
 	$xml->booking[$_REQUEST["id"]]->status=1;
-	$xml->asXML($this->booking_file); 
+	$xml->asXML($this->booking_file);
 	echo "<h3>".$this->texts["booking_status_confirmed"]."</h3>";
 
 	$headers  = "From: \"".strip_tags(stripslashes($this->settings["website"]["admin_email"]))."\"<".strip_tags(stripslashes($this->settings["website"]["admin_email"])).">\n";
@@ -32,56 +43,64 @@ if(isset($_POST["proceed_confirm"]))
 	$headers .= "Date: ".date("r")."\r\n";
 	$headers .= "Message-ID: <".time()."@booking>\r\n";
 	$headers .= "Content-Type: text/plain; charset=utf-8\r\n";
-	
-	
-	if(mail
-	(
-		$booking->email,
-		stripslashes($_POST["subject"]),
-		stripslashes($_POST["message"]),
-		$headers
-	))
-	{
-		?>
-		<h3><?php echo $this->texts["message_sent_success"];?></h3>
-	
-		<?php
-	}
+
+  //PHPMailer starts hebrev
+  $mail->isSMTP();
+  $mail->Host = $this->settings["email"]["smtp_server"];
+  $mail->Port = 587;
+  $mail->SMTPAuth = true;
+  $mail->Username = $this->settings["email"]["smtp_user"];
+  $mail->Password = $this->settings["email"]["smtp_password"];
+  $mail->setFrom($this->settings["email"]["smtp_user"], 'Tâm Chay Retreat');
+  $mail->addAddress($booking->email, $booking->name);
+  $mail->Subject = stripslashes($_POST["subject"]);
+  $mail->Body = stripslashes($_POST["message"]);
+
+  if (!$mail->send())
+  {
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+  } else
+  {
+    echo 'Message sent!';
+  }
+  //PHPMailer ends here
+
+
 }
 else
 {
 ?>
 	<div class="header-line">
 		  <div class="container">
-		  
+
 			<a href="index.php" style="margin-top:17px" class="btn btn-default pull-right"><?php echo $this->texts["go_back"];?></a>
-			
+
 			<h3><?php echo $this->texts["confirm_booking"];?> <strong><?php echo $_REQUEST["code"];?></strong></h3>
 		  </div>
 	</div>
-	
+
 
 	<div class="container">
 
 			<br/>
 			<?php
 
-			
-			
+
+
 			?>
-			
+
 			<div class="row">
 				<div class="col-md-8">
-				
+
 					<br/>
-				
-				
+
+
 					<form id="main" action="index.php" method="post"   enctype="multipart/form-data">
 					<input type="hidden" name="page" value="confirm_booking"/>
 					<input type="hidden" name="proceed_confirm" value="1"/>
 					<input type="hidden" name="code" value="<?php echo $_REQUEST["code"];?>"/>
 					<input type="hidden" name="id" value="<?php echo $_REQUEST["id"];?>"/>
-					
+
 						<fieldset>
 							<legend><?php echo $this->texts["message_customer"];?></legend>
 							<ol>
@@ -92,14 +111,14 @@ else
 										<option value="0"><?php echo $this->texts["no_word"];?></option>
 									</select>
 								</li>
-										
+
 								<li>
 									<label><?php echo $this->texts["subject"];?>:</label>
-									
-					
+
+
 									<input type="text" name="subject" value="<?php echo $this->texts["booking_has_confirmed"];?>"/>
 								</li>
-								
+
 								<li>
 									<label><?php echo $this->texts["message"];?>:</label>
 <?php
@@ -114,26 +133,26 @@ $this->texts["check_out_date"].": ".date("d/m/Y",intval($booking->end_time));
 $message_text=str_replace("{BOOKING_DETAILS}",$booking_details,$message_text);
 $message_text=str_replace("{BOOKING_CODE}",$booking->code,$message_text);
 
-?>								
+?>
 <textarea name="message" cols="40" rows="10"><?php echo $message_text;?></textarea>
 								</li>
-						
-								
+
+
 							<ol>
 						</fieldset>
-						
-						
-						
+
+
+
 						<div class="clearfix"></div>
 						<br/>
 						<button type="submit" class="btn btn-primary pull-right"> <?php echo $this->texts["send"];?> </button>
-						
+
 						<div class="clearfix"></div>
 						<br/>
 					</form>
-				
+
 				</div>
-				
+
 			</div>
 
 	</div>
