@@ -73,12 +73,12 @@ class SiteManager
 	{
 		if(file_exists("config.php"))
 		{
-			$this->settings = parse_ini_file("config.php",true);
+			$this->settings = parse_ini_string(file_get_contents("config.php"),true);
 		}
 		else
 		if(file_exists("../config.php"))
 		{
-			$this->settings = parse_ini_file("../config.php",true);
+			$this->settings = parse_ini_string(file_get_contents("../config.php"),true);
 		}
 		else
 		{
@@ -87,12 +87,12 @@ class SiteManager
 
 		if(file_exists("include/texts_".$this->lang.".php"))
 		{
-			$this->texts = parse_ini_file("include/texts_".$this->lang.".php",true);
+			$this->texts = parse_ini_string(file_get_contents("include/texts_".$this->lang.".php"),true);
 		}
 		else
 		if(file_exists("../include/texts_".$this->lang.".php"))
 		{
-			$this->texts = parse_ini_file("../include/texts_".$this->lang.".php",true);
+			$this->texts = parse_ini_string(file_get_contents("../include/texts_".$this->lang.".php"),true);
 		}
 		else
 		{

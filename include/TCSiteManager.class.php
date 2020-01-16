@@ -72,12 +72,12 @@ class TCSiteManager {
 
     if(file_exists("languages/texts_".$this->lang.".php"))
     {
-      $this->texts = parse_ini_file("languages/texts_".$this->lang.".php",true);
+      $this->texts = parse_ini_string(file_get_contents("languages/texts_".$this->lang.".php"),true);
     }
     else
     if(file_exists("../languages/texts_".$this->lang.".php"))
     {
-      $this->texts = parse_ini_file("../languages/texts_".$this->lang.".php",true);
+      $this->texts = parse_ini_string(file_get_contents("../languages/texts_".$this->lang.".php"),true);
     }
     else
     {
@@ -89,12 +89,12 @@ class TCSiteManager {
   {
     if(file_exists("languages/texts_".$this->lang.".php"))
     {
-      $this->texts = parse_ini_file("languages/texts_".$this->lang.".php",true);
+      $this->texts = parse_ini_string(file_get_contents("languages/texts_".$this->lang.".php"),true);
     }
     else
     if(file_exists("../languages/texts_".$this->lang.".php"))
     {
-      $this->texts = parse_ini_file("../languages/texts_".$this->lang.".php",true);
+      $this->texts = parse_ini_string(file_get_contents("../languages/texts_".$this->lang.".php"),true);
     }
     else
     {
