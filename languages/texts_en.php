@@ -90,3 +90,14 @@ event_end_date="Event End Date:"
 guests_overnight="Overnight Guests:"
 disclaimer="These are stock photos. At the moment the site is in construction and no photos are available"
 check_in_validation="The check-in date can not be after the check-out date!"
+select_check_in="Please select the check-in date"
+select_check_out="Please select the check-out date"
+group_booking_confirmation_message="Dear {NAME},
+
+Your booking for {BOOKING_DETAILS} is scheduled.
+Booking confirmation code: {BOOKING_CODE}
+
+which includes a stay for {GUESTS} overnight guests.
+
+We will email you once your booking is confirmed.
+Please don't hesitate to contact us if you have any other questions."

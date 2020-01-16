@@ -12,6 +12,9 @@ $heading_title;
     case "booking_groups":
       $heading_title = $this->texts["group_booking"];
       break;
+    case "group_success":
+      $heading_title = $this->texts["group_booking"];
+      break;
     case "booking":
       $heading_title = $this->texts["booking"];
       break;

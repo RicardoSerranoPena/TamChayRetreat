@@ -1,11 +1,40 @@
-<?php  ?>
+<?php
+
+if (isset($_POST['submit']))
+{
+  if (isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['email']))
+  {
+    $_POST['name']=strip_tags(stripslashes($_POST['name']));
+    $_POST['phone']=strip_tags(stripslashes($_POST['phone']));
+    $_POST['email']=strip_tags(stripslashes($_POST['email']));
+
+    $last_contact_id = $this->get_contact_reservation(strip_tags(stripslashes($_POST['name'])), strip_tags(stripslashes($_POST['phone'])), strip_tags(stripslashes($_POST['email'])));
+  }
+
+  if (!empty($last_contact_id))
+  {
+    if (isset($_POST['event_name']) && isset($_POST['event_start']) && isset($_POST['event_end']) && isset($_POST['guests']) && isset($_POST['message']))
+    {
+      $_POST['event_name']=strip_tags(stripslashes($_POST['event_name']));
+      $_POST['event_start']=strip_tags(stripslashes($_POST['event_start']));
+      $_POST['event_end']=strip_tags(stripslashes($_POST['event_end']));
+      $_POST['guests']=strip_tags(stripslashes($_POST['guests']));
+      $_POST['message']=strip_tags(stripslashes($_POST['message']));
+
+      $this->make_group_reservation(strip_tags(stripslashes($_POST['event_name'])), strip_tags(stripslashes($_POST['event_start'])), strip_tags(stripslashes($_POST['event_end'])), strip_tags(stripslashes($_POST['guests'])), strip_tags(stripslashes($_POST['message'])), $last_contact_id);
+    }
+  }
+}
+
+?>
 
   <section class="section contact-section" id="next">
     <div class="container">
       <div class="row">
         <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
 
-          <form action="include/groups.php" method="post" class="bg-white p-md-5 p-4 mb-5 border">
+          <form action="index.php" class="bg-white p-md-5 p-4 mb-5 border">
+          <input type="hidden" name="page" value="group_success">
             <div class="row">
               <div class="col-md-6 form-group">
                 <label class="text-black font-weight-bold" for="name"><?php echo $this->texts["name"]; ?></label>

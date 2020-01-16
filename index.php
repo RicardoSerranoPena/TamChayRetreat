@@ -5,6 +5,7 @@ require("include/TCSiteManager.class.php");
 
 $website = new TCSiteManager();
 
+$website->LoadDatabase();
 
 if(!isset($_REQUEST["lang"]))
 {

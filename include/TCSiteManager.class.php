@@ -28,6 +28,14 @@ class TCSiteManager {
     $this->page=$page;
   }
 
+  function LoadDatabase()
+  {
+    if(file_exists("dbh.php"))
+    {
+      include("dbh.php");
+    }
+  }
+
   function LoadTemplate()
   {
     global $_REQUEST,$DBprefix;
@@ -212,6 +220,92 @@ class TCSiteManager {
       }
 
       return $strSEPage;
-
     }
+
+    function get_random_code()
+  	{
+
+  		$arrChars = array("A","F","B","C","O","Q","W","E","R","T","Z","X","C","V","N");
+
+  		return $arrChars[rand(0,(sizeof($arrChars)-1))]."".rand(100,999)
+  					.$arrChars[rand(0,(sizeof($arrChars)-1))].rand(100,999);
+
+  	}
+
+    /*
+    A function to make the group reservation given the parameters
+    $conn
+    $event_name
+    $event_purpose
+    $event_start
+    $event_end
+    $event_guests
+    $event_message
+    $last_contact_id
+    */
+    function make_group_reservation($event_name, $event_start, $event_end, $event_guests, $event_message, $last_contact_id)
+    {
+      $event_name=strip_tags(stripslashes($event_name));
+      $event_start=strip_tags(stripslashes($event_start));
+      $event_end=strip_tags(stripslashes($event_end));
+      $event_guests=strip_tags(stripslashes($event_guests));
+      $event_message=strip_tags(stripslashes($event_message));
+
+      $sql_event_start = date("Y-m-d H:i:s", strtotime($event_start));
+      $sql_event_end = date("Y-m-d H:i:s", strtotime($event_end));
+
+      $event_start = date("d-m-Y", strtotime($event_start));
+      $event_end = date("d-m-Y", strtotime($event_end));
+
+      $group_reservation_id = get_random_code();
+
+      $group_reservation_sql = "INSERT INTO `group_reservations`
+      (`event_id`, `event_name`, `event_start_date`, `event_end_date`, `event_guests`, `event_message`, `event_contact`)
+      VALUES (
+        '$group_reservation_id',
+        '$event_name',
+        '$sql_event_start',
+        '$sql_event_end',
+        '$event_guests',
+        '$event_message',
+        '$last_contact_id'
+      );";
+      if ($conn->query($group_reservation_sql))
+      {
+        $this->group_reservation_id = $group_reservation_id;
+        $this->event_name = $event_name;
+        $this->event_start = $event_start;
+        $this->event_end = $event_end;
+        $this->event_guests = $event_guests;
+      }
+    }
+
+    function get_contact_reservation($name, $phone, $email)
+    {
+      $name = strip_tags(stripslashes($name));
+      $phone = strip_tags(stripslashes($phone));
+      $email = strip_tags(stripslashes($email));
+
+      $contact_info_sql = "INSERT INTO `group_contact`
+      (`name`, `phone`, `email`)
+      VALUES (
+        '$name',
+        '$phone',
+        '$email'
+      );";
+
+      if ($conn->query($contact_info_sql))
+      {
+        $this->last_contact_id = $conn->insert_id;
+        $this->group_contact_name = $name;
+        $this->group_contact_email = $email;
+        $this->group_contact_phone = $phone;
+      }
+
+      if(!empty($this->last_contact_id))
+      {
+        return $this->last_contact_id;
+      }
+    }
+
   }

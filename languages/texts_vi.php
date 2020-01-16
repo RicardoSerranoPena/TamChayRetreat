@@ -90,3 +90,13 @@ event_end_date="Ngày kết thúc sự kiện:"
 guests_overnight="Khách ở qua đêm:"
 disclaimer="Hình ảnh không thể hiện đời thực. Hiện tại trang web đang được xây dựng và không có hình ảnh nào"
 check_in_validation="Ngày check out không thể trước ngày check in"
+select_check_in="Làm ơn chọn ngày check in"
+select_check_out="Làm ơn chọn ngày check out"
+booking_confirmation_message="Kính gửi quý khách {NAME},
+
+Thông tin đặt phòng của bạn đã được xác nhận. Kiểm tra lại thông tin đặt phòng tại Tâm Chay Retreat Homestay như sau đây: {BOOKING_DETAILS}
+Mã đặt phòng của bạn là: {BOOKING_CODE}
+
+ví dụ {GUESTS} khách.
+
+Nếu có thêm câu hỏi, làm ơn hãy liên hệ với chúng tôi!"
