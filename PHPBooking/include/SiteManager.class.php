@@ -7,11 +7,12 @@
 ?><?php
 class SiteManager
 {
-	public $lang="en";
+	public $lang="vi";
 
 	public $page="home";
 	public $data_file = "data/rooms.xml";
 	public $booking_file = "data/bookings.xml";
+    public $group_booking_file = "data/group_bookings.xml";
 	public $arrPages = array();
 	public $domain = "";
 	public $multi_language = false;
@@ -19,7 +20,7 @@ class SiteManager
 	public $running_mode=1;
 
 
-	public $default_page_name="en_Home";
+	public $default_page_name="vi_Home";
 
 
 
@@ -56,6 +57,11 @@ class SiteManager
 	{
 		$this->booking_file= $booking_file;
 	}
+
+  function SetGroupBookingFile($group_booking_file)
+  {
+    $this->$group_booking_file= $group_booking_file;
+  }
 
 	function SetDatabase(Database $db)
 	{

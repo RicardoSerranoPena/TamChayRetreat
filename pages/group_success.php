@@ -1,4 +1,8 @@
-<?php  ?>
+<?php
+
+$group_bookings = simplexml_load_file($this->group_booking_file);
+
+?>
 
 
 <div class="container">

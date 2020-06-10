@@ -1,31 +1,67 @@
 <?php
+namespace GroupBooking;
+
+use PHPMailer\PHPMailer\{PHPMailer, SMTP, Exception};
+require 'Mail/PHPMailer.php';
+require 'Mail/SMTP.php';
+require 'Mail/Exception.php';
+$mail = new PHPMailer;
+
 
 if (isset($_POST['submit']))
 {
-  if (isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['email']))
+  if (($_POST['name'] != "") && ($_POST['phone'] != "") && ($_POST['email'] != ""))
   {
+    //Saving the group booking information in the XML file
+    $group_bookings = simplexml_load_file($this->$group_booking_file);
+    $group_booking = $group_bookings->addChild('group_booking');
+    $group_booking->addChild('code', $this->get_random_code());
+    $group_booking->addChild('name', stripslashes($_POST['name']));
+    $group_booking->addChild('phone', stripslashes($_POST['phone']));
+    $group_booking->addChild('email', stripslashes($_POST['email']));
+    $group_booking->addChild('event_name', stripslashes($_POST['event_name']));
+    $group_booking->addChild('event_start', stripslashes($_POST['event_start']));
+    $group_booking->addChild('event_end', stripslashes($_POST['event_end']));
+    $group_booking->addChild('guests', stripslashes($_POST['guests']));
+    $group_booking->addChild('message', stripslashes($_POST['message']));
+    $group_booking->addChild('status', 0);
+
+    $group_bookings->asXML($this->$group_booking_file);
+    //End saving in the XML file
+
+    //Sending an email notification to the site owner
     $_POST['name']=strip_tags(stripslashes($_POST['name']));
     $_POST['phone']=strip_tags(stripslashes($_POST['phone']));
     $_POST['email']=strip_tags(stripslashes($_POST['email']));
+    $_POST['message']=strip_tags(stripslashes($_POST['message']));
 
-    $last_contact_id = $this->get_contact_reservation(strip_tags(stripslashes($_POST['name'])), strip_tags(stripslashes($_POST['phone'])), strip_tags(stripslashes($_POST['email'])));
-  }
+    $email_text = "New Group Booking reservation made by " . strip_tags(stripslashes($_POST['name'])).
+    ". email: " . strip_tags(stripslashes($_POST['email'])). " and phone: ". strip_tags(stripslashes($_POST['phone'])).
+    "\n\n"."User message: " . strip_tags(stripslashes($_POST['message']));
 
-  if (!empty($last_contact_id))
-  {
-    if (isset($_POST['event_name']) && isset($_POST['event_start']) && isset($_POST['event_end']) && isset($_POST['guests']) && isset($_POST['message']))
+    //PHPMailer starts here
+    $mail->isSMTP();
+    $mail->Host = $this->settings["email"]["smtp_server"];
+    $mail->Port = 587;
+    $mail->SMTPAuth = true;
+    $mail->Username = $this->settings["email"]["smtp_user"];
+    $mail->Password = $this->settings["email"]["smtp_password"];
+    $mail->setFrom($this->settings["email"]["smtp_user"], 'Tam Chay Retreat');
+    $mail->addAddress($this->settings["email"]["smtp_user"], 'Group Reservation');
+    $mail->Subject = 'New Group Booking';
+    $mail->Body = $email_text;
+
+    if (!$mail->send())
     {
-      $_POST['event_name']=strip_tags(stripslashes($_POST['event_name']));
-      $_POST['event_start']=strip_tags(stripslashes($_POST['event_start']));
-      $_POST['event_end']=strip_tags(stripslashes($_POST['event_end']));
-      $_POST['guests']=strip_tags(stripslashes($_POST['guests']));
-      $_POST['message']=strip_tags(stripslashes($_POST['message']));
-
-      $this->make_group_reservation(strip_tags(stripslashes($_POST['event_name'])), strip_tags(stripslashes($_POST['event_start'])), strip_tags(stripslashes($_POST['event_end'])), strip_tags(stripslashes($_POST['guests'])), strip_tags(stripslashes($_POST['message'])), $last_contact_id);
+      echo 'Mailer Error: ' . $mail->ErrorInfo;
+    } else
+    {
+      echo 'Message sent!';
     }
+    //PHPMailer ends here
+    //end sending email
   }
 }
-
 ?>
 
   <section class="section contact-section" id="next">

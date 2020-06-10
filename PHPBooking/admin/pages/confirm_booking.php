@@ -7,13 +7,11 @@
 // Released under the MIT license
 
 
-namespace BookingProject;
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-require 'include/PHPMailer.php';
-require 'include/SMTP.php';
-require 'include/Exception.php';
+namespace ConfirmBooking;
+use PHPMailer\PHPMailer\{PHPMailer, SMTP, Exception};
+require '../../Mail/PHPMailer.php';
+require '../../Mail/SMTP.php';
+require '../../Mail/Exception.php';
 $mail = new PHPMailer;
 
 ?><?php

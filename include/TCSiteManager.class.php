@@ -5,8 +5,10 @@ class TCSiteManager {
   public $lang;
 
   public $page="home";
+  public $group_booking_file = "PHPBooking/data/group_bookings.xml";
   public $domain = "tamchayretreat.com";
   public $texts = array();
+  public $settings = array();
   public $multi_language = true;
 
 
@@ -87,6 +89,20 @@ class TCSiteManager {
 
   function loadSettings()
   {
+    if(file_exists("config.php"))
+		{
+			$this->settings = parse_ini_string(file_get_contents("config.php"),true);
+		}
+		else
+		if(file_exists("PHPBooking/config.php"))
+		{
+			$this->settings = parse_ini_string(file_get_contents("PHPBooking/config.php"),true);
+		}
+		else
+		{
+			die("The configuration file doesn't exist!");
+		}
+
     if(file_exists("languages/texts_".$this->lang.".php"))
     {
       $this->texts = parse_ini_string(file_get_contents("languages/texts_".$this->lang.".php"),true);
