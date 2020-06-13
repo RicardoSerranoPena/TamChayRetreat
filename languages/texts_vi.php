@@ -14,22 +14,32 @@ check_in_date="Ngày nhận phòng"
 guests="Khách"
 search="Tìm kiếm"
 our_philosophy="Chúng tôi làm gì"
-our_philosophy_prgrph="Tâm Chay Retreat tạo ra một không gian khuyến khích hướng nội để các quý khách có thể đặt các câu hỏi về bản thân và giá trị cơ bản của con người. Triết lý của chúng tôi là Gieo Nhân Tốt, Gặt Quả Lành; vì vậy, hãy để chúng tôi giúp bạn giúp bạn tìm thấy hạt giống tốt đó."
+our_philosophy_home="Sự sống bắt đầu từ một hạt mầm. Hạt mầm rơi xuống đất, có nắng, có nước, dần dần nảy mầm và phát triển. Trái lại, nếu không gặp môi trường phù hợp, hạt mầm sẽ khô héo và chết đi.
+<br><br>
+Con người chúng ta, mỗi người cũng có những hạt mầm như vậy. Đó là hạt mầm của tâm hồn, của những giá trị bản thể của mỗi người. Để không bị khô héo và chết đi, hạt mầm ấy cũng cần một môi trường phù hợp để nảy nở và phát triển.
+<br><br>
+Tâm Chay Retreat được tạo ra để giúp bạn tìm về với chính mình, ươm mầm và chăm sóc hạt mầm của mình xoay quanh triết lý cốt lõi: ”Gieo Nhân Tốt, Gặt Quả Lành”"
+
+our_philosophy_prgrph_2="Cách xa vùng thành thị vội vã, Tâm Chay Retreat mang đến một không gian vùng quê yên bình, mộc mạc của thiên nhiên của vùng thị trấn Trảng Bàng, Tây Ninh. Tại nơi đây, mỗi người có cơ hội đưa lòng mình về với thiên nhiên, để đặt những câu hỏi về bản thân, những giá trị sống mà đôi lúc ta đã bỏ quên.
+<br><br>
+Hơn cả một kỳ nghỉ bình yên khỏi cuộc sống bộn bề, Tâm Chay Retreat mong muốn mang lại một góc nhìn cuộc sống mới, một giá trị sống mới. Thay vì đuổi theo tiền bạc và danh vọng, chúng tôi tin rằng mỗi con người cần tìm về với chính mình, thấu hiểu mình để tìm ra giá trị sống, tìm ra định nghĩa hạnh phúc và đủ đầy của chính mình. Từ đó, đưa lòng mình về với cộng đồng, mang lại giá trị không chỉ cho bản thân mình mà còn là mọi người xung quanh.
+<br><br>
+Như Founder Tâm Chay Retreat luôn quan niệm rằng: “Đã đến lúc chúng ta, những công dân trong xã hội này, chịu trách nhiệm với bản thân và cuộc sống xung quanh. Hãy tự chịu trách nhiệm với hạnh phúc của bản thân và mang lại hạnh phúc rộng lớn cho những người xung quanh. Khi đó mọi người sẽ có tâm thế cùng chung tay góp sức nâng cao giá trị cộng đồng"
 learn_more="Tìm Hiểu Thêm"
 rooms_prgrph="Tâm Chay Retreat nhằm tạo ra môi trường thuận tự nhiên để quý khách có thể đầu tư thời gian vào bản thân; một khoảng thời gian và trải nghiệm mà đáng giá hơn một kỳ nghỉ bình thường. Không gian xung quanh vùng quê tạo cơ hội để bạn có thể hạ mình trước vẻ đẹp đơn sơ, mộc mạc của thiên nhiên mà thiếu có trong cuộc sống xô bồ của thành phố."
-standard_bed="Giường Đơn"
-double_room="Phòng Đôi"
-single_room="Phòng Đơn"
-standard_bed_price="200k / mỗi đêm"
-s_b_price="200k"
-double_room_price="700k / mỗi đêm"
-d_r_price="700k"
-single_room_price="$450k / mỗi đêm"
-s_r_price="450k"
+two_twins_bed="Phòng Twin Gia Đình"
+one_king="Phòng En Suite"
+three_single_beds="Phòng Dorm"
+two_twins_bed_price="400k / mỗi đêm"
+t_t_b_price="400k"
+one_king_price="500k / mỗi đêm"
+o_k_price="500k"
+three_single_beds_price="$400k / mỗi đêm"
+t_s_b_price="400k"
 per_night="/ mỗi đêm"
-standard_bed_description="Nhận giường đơn trong một 4 giường. Bạn sẽ có cơ hội tận hưởng không gian hiện đại và rộng rãi và tiết kiệm tiền nữa."
-double_room_description="Trong phòng đội, bạn có thể tận hưởng sự riêng tư và có phòng tắm riêng."
-single_room_description="Phòng đơn cho bạn một không gian thoáng mát và riêng tư, để bạn có thể tận hưởng thời gian nghỉ ngơi."
+two_twins_bed_description="Phòng Twin bao gồm hai giường, mỗi giường có thể chứa được hai người. Phòng Twin thích hợp cho gia đình lớn hoặc các nhóm bạn."
+one_king_description="Phòng En Suite bao gồm một giường King Size và toa-lét riêng. Phòng thích hợp dành cho các cặp đôi hoặc một gia đình nhỏ."
+three_single_beds_description="Phòng Dorm bao gồm 3 giường đơn thích hợp cho các đoàn hoặc nhóm 3 người."
 footer_prgrph="Môi trường để phát triển chánh niệm và nhận thức về bản thân"
 book_for_travellers="Đặt phòng"
 book_for_groups="Đặt phòng theo nhóm"

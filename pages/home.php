@@ -87,11 +87,11 @@
           <figure class="img-absolute">
             <img src="images/white_backpacker.jpg" alt="Image" class="img-fluid">
           </figure>
-          <img src="images/tay_ninh.jpg" alt="Image" class="img-fluid rounded">
+          <img src="images/yellow_flowers.jpg" alt="Image" class="img-fluid rounded">
         </div>
         <div class="col-md-12 col-lg-4 order-lg-1" data-aos="fade-up">
           <h2 class="heading"><?php echo $this->texts["our_philosophy"]; ?></h2>
-          <p class="mb-4"><?php echo $this->texts["our_philosophy_prgrph"]; ?></p>
+          <p class="mb-4"><?php echo $this->texts["our_philosophy_home"]; ?></p>
             <p><a href="index.php?page=about" class="btn btn-primary text-white py-2 mr-3"><?php echo $this->texts["learn_more"]; ?></a></p>
           </div>
 
@@ -112,37 +112,36 @@
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
             <a href="index.php?page=rooms" class="room">
               <figure class="img-wrap">
-                <img src="images/img_3.jpg" alt="Free website template" class="img-fluid mb-3">
+                <img src="images/2_doubles_2_views.jpg" alt="two twin beds for family of four" class="img-fluid mb-3">
               </figure>
               <div class="p-3 text-center room-info">
-                <h2><?php echo $this->texts["standard_bed"]; ?></h2>
-                <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["standard_bed_price"]; ?></span>
+                <h2><?php echo $this->texts["two_twins_bed"]; ?></h2>
+                <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["two_twins_bed_price"]; ?></span>
               </div>
             </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
             <a href="index.php?page=rooms" class="room">
               <figure class="img-wrap">
-                <img src="images/img_2.jpg" alt="Free website template" class="img-fluid mb-3">
+                <img src="images/1_king.jpg" alt="one king bed for two people" class="img-fluid mb-3">
               </figure>
               <div class="p-3 text-center room-info">
-                <h2><?php echo $this->texts["double_room"]; ?></h2>
-                <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["double_room_price"]; ?></span>
+                <h2><?php echo $this->texts["one_king"]; ?></h2>
+                <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["one_king_price"]; ?></span>
               </div>
             </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
             <a href="index.php?page=rooms" class="room">
               <figure class="img-wrap">
-                <img src="images/img_1.jpg" alt="Free website template" class="img-fluid mb-3">
+                <img src="images/3_singles.jpg" alt="three single beds for three people" class="img-fluid mb-3">
               </figure>
               <div class="p-3 text-center room-info">
-                <h2><?php echo $this->texts["single_room"]; ?></h2>
-                <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["single_room_price"]; ?></span>
+                <h2><?php echo $this->texts["three_single_beds"]; ?></h2>
+                <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["three_single_beds_price"]; ?></span>
               </div>
             </a>
           </div>
-          <p><?php echo $this->texts["disclaimer"]; ?></p>
 
         </div>
       </div>

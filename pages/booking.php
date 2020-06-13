@@ -2,7 +2,7 @@
 
   <section class="section contact-section" id="next">
     <div class="container">
-      <iframe frameborder="0" src="http://localhost:8888/bookingWebsite/PHPBooking/iframe.php" width="100%" height="800"></iframe>
+      <iframe frameborder="0" src="https://tamchayretreat.com/PHPBooking/iframe.php" width="100%" height="800"></iframe>
     </div>
 
     <div class="col-md-5" data-aos="fade-up" data-aos-delay="200">

@@ -58,37 +58,36 @@
         <div class="col-md-6 col-lg-4" data-aos="fade-up">
           <a class="room">
             <figure class="img-wrap">
-              <img src="images/img_3.jpg" alt="Free website template" class="img-fluid mb-3">
+              <img src="images/2_doubles_2_views.jpg" alt="Double Room for family of four" class="img-fluid mb-3">
             </figure>
             <div class="p-3 text-center room-info">
-              <h2><?php echo $this->texts["standard_bed"]; ?></h2>
-              <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["standard_bed_price"]; ?></span>
+              <h2><?php echo $this->texts["two_twins_bed"]; ?></h2>
+              <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["two_twins_bed_price"]; ?></span>
             </div>
           </a>
         </div>
         <div class="col-md-6 col-lg-4" data-aos="fade-up">
           <a class="room">
             <figure class="img-wrap">
-              <img src="images/img_2.jpg" alt="Free website template" class="img-fluid mb-3">
+              <img src="images/1_king.jpg" alt="King bed room for two" class="img-fluid mb-3">
             </figure>
             <div class="p-3 text-center room-info">
-              <h2><?php echo $this->texts["double_room"]; ?></h2>
-              <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["double_room_price"]; ?></span>
+              <h2><?php echo $this->texts["one_king"]; ?></h2>
+              <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["one_king_price"]; ?></span>
             </div>
           </a>
         </div>
         <div class="col-md-6 col-lg-4" data-aos="fade-up">
           <a class="room">
             <figure class="img-wrap">
-              <img src="images/img_1.jpg" alt="Free website template" class="img-fluid mb-3">
+              <img src="images/3_singles.jpg" alt="Dorm room with three single beds" class="img-fluid mb-3">
             </figure>
             <div class="p-3 text-center room-info">
-              <h2><?php echo $this->texts["single_room"]; ?></h2>
-              <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["single_room_price"]; ?></span>
+              <h2><?php echo $this->texts["three_single_beds"]; ?></h2>
+              <span class="text-uppercase letter-spacing-1"><?php echo $this->texts["three_single_beds_price"]; ?></span>
             </div>
           </a>
         </div>
-        <p><?php echo $this->texts["disclaimer"]; ?></p>
 
       </div>
     </div>
@@ -104,33 +103,32 @@
         </div>
       </div>
       <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="100">
-        <a href="index.php?page=booking" class="image d-block bg-image-3" style="background-image: url('images/img_3.jpg');"></a>
+        <a href="index.php?page=booking" class="image d-block bg-image-2" style="background-image: url('images/2_doubles_2_views.jpg');"></a>
         <div class="text">
-          <span class="d-block mb-4"><span class="display-4 text-primary"><?php echo $this->texts["s_b_price"]; ?></span> <span class="text-uppercase letter-spacing-2"><?php echo $this->texts["per_night"]; ?></span> </span>
-          <h2 class="mb-4"><?php echo $this->texts["standard_bed"]; ?></h2>
-          <p><?php echo $this->texts["standard_bed_description"]; ?></p>
-          <p><a href="index.php?page=booking" class="btn btn-primary text-white"><?php echo $this->texts["book_now"]; ?></a></p>
-        </div>
-      </div>
-      <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="200">
-        <a href="index.php?page=booking" class="image d-block bg-image-2 order-2" style="background-image: url('images/img_2.jpg');"></a>
-        <div class="text order-1">
-          <span class="d-block mb-4"><span class="display-4 text-primary"><?php echo $this->texts["d_r_price"]; ?></span> <span class="text-uppercase letter-spacing-2"><?php echo $this->texts["per_night"]; ?></span> </span>
-          <h2 class="mb-4"><?php echo $this->texts["double_room"]; ?></h2>
-          <p><?php echo $this->texts["double_room_description"]; ?></p>
+          <span class="d-block mb-4"><span class="display-4 text-primary"><?php echo $this->texts["t_t_b_price"]; ?></span> <span class="text-uppercase letter-spacing-2"><?php echo $this->texts["per_night"]; ?></span> </span>
+          <h2 class="mb-4"><?php echo $this->texts["two_twins_bed"]; ?></h2>
+          <p><?php echo $this->texts["two_twins_bed_description"]; ?></p>
           <p><a href="index.php?page=booking" class="btn btn-primary text-white"><?php echo $this->texts["book_now"]; ?></a></p>
         </div>
       </div>
       <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="100">
-        <a href="index.php?page=booking" class="image d-block bg-image-2" style="background-image: url('images/img_1.jpg');"></a>
-        <div class="text">
-          <span class="d-block mb-4"><span class="display-4 text-primary"><?php echo $this->texts["s_r_price"]; ?></span> <span class="text-uppercase letter-spacing-2"><?php echo $this->texts["per_night"]; ?></span> </span>
-          <h2 class="mb-4"><?php echo $this->texts["single_room"]; ?></h2>
-          <p><?php echo $this->texts["single_room_description"]; ?></p>
+        <a href="index.php?page=booking" class="image d-block bg-image-2 order-2" style="background-image: url('images/1_king.jpg');"></a>
+        <div class="text order-1">
+          <span class="d-block mb-4"><span class="display-4 text-primary"><?php echo $this->texts["o_k_price"]; ?></span> <span class="text-uppercase letter-spacing-2"><?php echo $this->texts["per_night"]; ?></span> </span>
+          <h2 class="mb-4"><?php echo $this->texts["one_king"]; ?></h2>
+          <p><?php echo $this->texts["one_king_description"]; ?></p>
           <p><a href="index.php?page=booking" class="btn btn-primary text-white"><?php echo $this->texts["book_now"]; ?></a></p>
         </div>
       </div>
-      <p><?php echo $this->texts["disclaimer"]; ?></p>
+      <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="100">
+        <a href="index.php?page=booking" class="image d-block bg-image-2" style="background-image: url('images/3_singles.jpg');"></a>
+        <div class="text">
+          <span class="d-block mb-4"><span class="display-4 text-primary"><?php echo $this->texts["t_s_b_price"]; ?></span> <span class="text-uppercase letter-spacing-2"><?php echo $this->texts["per_night"]; ?></span> </span>
+          <h2 class="mb-4"><?php echo $this->texts["three_single_beds"]; ?></h2>
+          <p><?php echo $this->texts["three_single_beds_description"]; ?></p>
+          <p><a href="index.php?page=booking" class="btn btn-primary text-white"><?php echo $this->texts["book_now"]; ?></a></p>
+        </div>
+      </div>
 
     </div>
   </section>

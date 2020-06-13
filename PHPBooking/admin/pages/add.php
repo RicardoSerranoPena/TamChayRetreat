@@ -84,7 +84,7 @@ if(!defined('IN_SCRIPT')) die("");
 									
 									<input type="text" name="title" required value=""/>
 									<br>
-									<span class="field-explanation"><?php echo $this->texts["double_room_ground"];?></span>
+									<span class="field-explanation"><?php echo $this->texts["one_king_ground"];?></span>
 								</li>
 								<li>
 									<label><?php echo $this->texts["description"];?>:</label>
