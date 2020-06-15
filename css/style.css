@@ -150,7 +150,7 @@ textarea.form-control {
         font-size: 27px;
         } }
 
-.site-navbar {
+/* .site-navbar {
   position: fixed;
   display: none;
   top: 0;
@@ -193,11 +193,33 @@ textarea.form-control {
     color: #adb5bd;
     margin-bottom: 30px; }
   .site-navbar .extra-info p {
-    color: #212529; }
+    color: #212529; } */
 
 .full-height {
   height: 100vh;
   min-height: 700px; }
+
+
+/* .site-hero-1 {
+    height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.picture-container {
+
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+.picture-container img {
+
+    width: 100%;
+    height: 100%;
+} */
 
 .site-hero {
   background-size: cover;
@@ -764,7 +786,26 @@ textarea.form-control {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     }
+    .contact-section .contact-info .ellipsis p{
+        color: #ffde59;
+    }
 
+@media screen and (max-width:600px) {
+    .contact-section .contact-info p {
+        font-size: 1.1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .navbar-brand{
+        font-size: 1rem;
+    }
+    .navbar-toggler{
+        font-size: 1rem;
+    }
+}
 .post-categories li {
   display: block; }
   .post-categories li a {

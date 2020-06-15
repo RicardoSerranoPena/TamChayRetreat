@@ -84,9 +84,6 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-12 col-lg-7 ml-auto order-lg-2 position-relative mb-5" data-aos="fade-up">
-          <figure class="img-absolute">
-            <img src="images/white_backpacker.jpg" alt="Image" class="img-fluid">
-          </figure>
           <img src="images/yellow_flowers.jpg" alt="Image" class="img-fluid rounded">
         </div>
         <div class="col-md-12 col-lg-4 order-lg-1" data-aos="fade-up">
