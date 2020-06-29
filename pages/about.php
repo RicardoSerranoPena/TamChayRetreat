@@ -55,6 +55,21 @@
                     <div class="slider-item">
                         <a href="images/2_doubles.jpg" data-fancybox="images" data-caption="Two full beds at Tâm Chay Retreat"><img src="images/2_doubles.jpg" alt="two full beds" class="img-fluid"></a>
                     </div>
+                    <div class="slider-item">
+                        <a href="images/plants+hand.jpg" data-fancybox="images" data-caption="Front plants at Tâm Chay Retreat"><img src="images/plants+hand.jpg" alt="arm reaching for plants" class="img-fluid"></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="images/from_outside_to_inside.jpg" data-fancybox="images" data-caption="Relax at Tâm Chay Retreat"><img src="images/from_outside_to_inside.jpg" alt="woman sitting down at Tâm Chay Retreat living room" class="img-fluid"></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="images/uke.jpg" data-fancybox="images" data-caption="Find yourself at Tâm Chay Retreat"><img src="images/uke.jpg" alt="woman playing the ukelele" class="img-fluid"></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="images/chair+sky.jpg" data-fancybox="images" data-caption="Enjoy afternoons at Tâm Chay Retreat"><img src="images/chair+sky.jpg" alt="empty chair looking at sunset inside a room of Tâm Chay Retreat" class="img-fluid"></a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="images/uke_on_chair.jpg" data-fancybox="images" data-caption="Explore who you are at Tâm Chay Retreat"><img src="images/uke_on_chair.jpg" alt="ukelele on chair" class="img-fluid"></a>
+                    </div>
                 </div>
                 <!-- END slider -->
             </div>
